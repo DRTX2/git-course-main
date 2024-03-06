@@ -1,3 +1,4 @@
 # repositorio nuevo con rama main desde comandos
 
-ptm funcionaaaaaa
+'git add -h' or 'git add help' by see manuals.
+
