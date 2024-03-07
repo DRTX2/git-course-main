@@ -1,4 +1,7 @@
-hmtl{
+body{
     background-color: #333;
     color: #fff;
+}
+article p{
+    background-color: #222;
 }

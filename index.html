@@ -57,8 +57,10 @@
             <li>Invierno - 4</li>
         </ol>
     </div>
-    <h2>Sobre los commit</h2>
     <div class="box-3">
+
+        <h2>Sobre los commit</h2>
+
         <article>
             <h3>Registro del historial </h3>
             <h4>Regresar a un commit anterior</h4>
@@ -82,6 +84,7 @@
             <p>git log --oneline --graph --all</p>
             <!-- claro como estamos en bash se puede redireccionar a un archivo -->
         </article>
+
         <article>
             <h3>Reseteo del historial</h3>
             <h4>Antes de eso veamos <b><i>git status</i></b></h4>
@@ -132,6 +135,7 @@ En resumen, git reset --mixed es útil para deshacer commits en Git manteniendo 
             <h4>Git reset --hard id-commit</h4>
             <p>Desecha todo el historial y regresa al commmit especificado</p>
         </article>
+
         <article>
             <h3>Resetear el repositorio</h3>
             <p>Para esto en cambio vamos a mover el archivo ./.git/config a una ruta, eliminamos la carpeta,claro se puede quedar el .md, posteriormente vamos a usar git init, git branch -M main(esto si queremos seguir usando main en lugar d master), git add, git commit, vamos a regresar el archivo a config a su ruta original y finalmente un git push --force origin main. Esto para que ignore los warning y se descargue bn. Poco usual pero se puede usar. No recomendable si no es algo muy personal</p>
@@ -177,10 +181,26 @@ En resumen, git reset --mixed es útil para deshacer commits en Git manteniendo 
                 git push --tags 
             </p>
         </article>
+
     </div>
+    <div class="box-4">
+        <h2>GitHub Pages</h2>
+        <article>
+            <h3>STEPS</h3>
+            <ol>
+                <li>git branch gh-pages</li>
+                <li>git checkout gh-pages</li>
+                <li>git remote add origin https://github.com/usuario/repositorio.git</li>
+                <li>git push origin gh-pages</li>
+                <li>git pull origin gh-pages</li>
+            </ol>
+        </article>
+    </div>
+
     <footer>
         Derechos reservados a no se que cosa. Para usar el <b>~</b> se debe usar alt+126.
     </footer>
+
     <p>pero madre mia willy que carajo hiciste</p>
 </body>
 </html>
