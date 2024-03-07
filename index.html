@@ -9,50 +9,130 @@
 <body>
     <h1>Git Course</h1>
     <h2>Repositorios</h2>
-    <p>
-        Para clonar repos usar: <b>git clone https://___.git</b><br>
-    </p>
-    <h2>Esto es Branch - Ramas</h1>
-    <p>
-        Ver Ramas: <b>git branch</b><br>
-        Crear: <b>git branch nameBranch</b><br>
-        Cambiar: <b>git checkout nameBranch</b><br>
-        Crear y cambiar: <b>git checkout -b nameBranch</b><br>
-        Eliminar(con cuidado): <b>git branch -d nameBranch</b><br>
-        <em>No se pueden eliminar si estas en uno</em><br>
-        Eliminar(forzandolo-peligroso): <b>git branch -D nameBranch</b><br>
-        Eliminar una rama que esta en el repo: <b>git push origin --delete nameBranch</b><br>
-        Agregar modificaciones al ultimo commit: <br>
-        <b>Sin editar el mensaje[tras esto usar git add para pasarlo a staged, bueno segun yo es antes para poder tener algo con que trabajar, pero bueno, tras eso solo un ]: </b>git commit --amend --no-edit <br>
-        <b>Modificando el mensaje: </b>git commit --amend -m 'nuevo mensaje  del ultimo commit' <br>
-        <b>Eliminar el ultimo commit: </b> git reset --hard HEAD <br>
-        Ver commits con: <b>git log</b><br>
-        Ver commits en una linea: <b>git log --oneline</b><br>
-        
-    </p>
-    <p>
-        About push command when you create a branch local because it's not exist in remote dev ecosystem, you can resolve this. Here is the help message: <br>
-        <dl>
-            
-            El GIT PUSHHHHHHHHH
-            <dt>
-                fatal: The current branch html has no upstream branch. <br>
-                To push the current branch and set the remote as upstream, use: 
-                    git push --set-upstream origin html <br>
-                    or: git push -u origin html(or whatever did you name your branch) <br>
-                To have this happen automatically for branches without a tracking
-                upstream, see 'push.autoSetupRemote' in 'git help config'.
-            </dt>
-        </dl>
-
-    </p>
+    <div class="box">
+        <p>
+            Para clonar repos usar: <b>git clone https://___.git</b><br>
+        </p>
+        <h2>Esto es Branch - Ramas</h1>
+        <p>
+            Ver Ramas: <b>git branch</b><br>
+            Crear: <b>git branch nameBranch</b><br>
+            Cambiar: <b>git checkout nameBranch</b><br>
+            Crear y cambiar: <b>git checkout -b nameBranch</b><br>
+            Eliminar(con cuidado): <b>git branch -d nameBranch</b><br>
+            <em>No se pueden eliminar si estas en uno</em><br>
+            Eliminar(forzandolo-peligroso): <b>git branch -D nameBranch</b><br>
+            Eliminar una rama que esta en el repo: <b>git push origin --delete nameBranch</b><br>
+            Agregar modificaciones al ultimo commit: <br>
+            <b>Sin editar el mensaje[tras esto usar git add para pasarlo a staged, bueno segun yo es antes para poder tener algo con que trabajar, pero bueno, tras eso solo un ]: </b>git commit --amend --no-edit <br>
+            <b>Modificando el mensaje: </b>git commit --amend -m 'nuevo mensaje  del ultimo commit' <br>
+            <b>Eliminar el ultimo commit: </b> git reset --hard HEAD <br>
+            Ver commits con: <b>git log</b><br>
+            Ver commits en una linea: <b>git log --oneline</b><br>
+            Para resetear(eliminando el commit actual) es decir volver al anterior commit se puede usar: <b> git reset --hard HEAD~1</b> <br>
+        </p>
+        <p>
+            About push command when you create a branch local because it's not exist in remote dev ecosystem, you can resolve this. Here is the help message: <br>
+            <dl>
+                
+                El GIT PUSHHHHHHHHH
+                <dt>
+                    fatal: The current branch html has no upstream branch. <br>
+                    To push the current branch and set the remote as upstream, use: 
+                        git push --set-upstream origin html <br>
+                        or: git push -u origin html(or whatever did you name your branch) <br>
+                    To have this happen automatically for branches without a tracking
+                    upstream, see 'push.autoSetupRemote' in 'git help config'.
+                </dt>
+            </dl>
+    
+        </p>
+    </div>
     <h2>Agregando estaciones del año</h2>
-    <ol>
-        <li>Primavera - 1</li>
-        <li>Verano - 2</li>
-        <li>Otoño - 3</li>
-        <li>Invierno - 4</li>
-    </ol>
+    <div class="box-2">
+        <ol>
+            <li>Primavera - 1</li>
+            <li>Verano - 2</li>
+            <li>Otoño - 3</li>
+            <li>Invierno - 4</li>
+        </ol>
+    </div>
+    <h2>Sobre los commit</h2>
+    <div class="box-3">
+        <article>
+            <h3>Registro del historial </h3>
+            <h4>Regresar a un commit anterior</h4>
+            <p>Para ello se usa el id del commit que se puede obtener con 'git log', 'git log --oneline' u obteniendolo si se trabajo con push su ultimo commit se queda registrado, y en la consola usamos el clasico comando 'git checkout idCommit'</p>
+            <h4>Para mostrar el historial con formato de fecha y descripcion del mensaje:</h4>
+            <p>git log --pretty=format:"%h - %an, %ar : %s"</p>
+            <h4>Cambios recientes limitandolo a n commits</h4>
+            <p>git log -n</p>
+            <h4>Cambios luego de x fecha</h4>
+            <p>git log --after="2019-07-07 00:00:00"</p>
+            <h4>Antes de una fecha</h4>
+            <p>git log --before="2019-07-07 00:00:00"</p>
+            <h4>Entre una fecha</h4>
+            <!-- dar rango -->
+            <p>git log --after="2019-07-07 00:00:00" --before="2019-07-07 00:00:00"</p>
+            <h4>Mostrar todo el registro de acciones del log, incluyendo inserciones,cambios,eliminaciones y el status area</h4>
+            <p>git reflog</p>
+            <h4>Diferencia entre el working directory y el staging area</h4>
+            <p>git diff</p>
+            <h4>Mostrar grafica de los commits</h4>
+            <p>git log --oneline --graph --all</p>
+            <!-- claro como estamos en bash se puede redireccionar a un archivo -->
+        </article>
+        <article>
+            <h3>Reseteo del historial</h3>
+            <h4>Antes de eso veamos <b><i>git status</i></b></h4>
+            <p>Este se encarga de mostrar un listado de archivos  nuevos(untracked), borrados o editados</p>
+            <h4>Git reset --soft</h4>
+            <!-- 
+
+                El comando git reset --soft se utiliza para deshacer commits en Git de una manera que mantiene los cambios en tu directorio de trabajo. Aquí tienes una explicación detallada de cómo funciona:
+
+git reset --soft <commit>: Este comando mueve la rama actual (por ejemplo, main, master, etc.) al commit especificado, pero mantiene los cambios en el área de preparación (staging area) y en tu directorio de trabajo. La sintaxis <commit> puede ser un hash de commit, una referencia a una rama (como main, master, etc.) o un apuntador relativo como HEAD~2 para retroceder dos commits atrás desde HEAD.
+
+Efecto en los commits: Los commits que deshaces con git reset --soft no se eliminan por completo de tu historial de Git; simplemente se mueven a un estado anterior en tu rama. Esto significa que los cambios en los commits deshechos todavía están disponibles para ser modificados y reutilizados.
+
+Uso común: git reset --soft es útil cuando deseas deshacer uno o más commits, pero quieres conservar los cambios realizados en esos commits para realizar ajustes o volver a hacer commits con esos cambios modificados.
+
+Pasos típicos después de un git reset --soft:
+
+Después de ejecutar git reset --soft, los cambios de los commits deshechos están en el área de preparación y en tu directorio de trabajo. Puedes revisar los cambios con git status y hacer ajustes si es necesario.
+Luego, puedes hacer un nuevo commit con los cambios ajustados utilizando git commit.
+En resumen, git reset --soft es útil para deshacer commits en Git manteniendo los cambios en tu directorio de trabajo. Te permite reutilizar o ajustar los cambios de los commits deshechos antes de hacer nuevos commits en tu historial de Git.
+
+
+             -->
+            <p>Borra el HEAD</p>
+            <h4>Git reset --mixed</h4>
+            <!-- 
+
+                El comando git reset --mixed se utiliza para deshacer commits en Git de una manera que mantiene los cambios en tu directorio de trabajo pero no los mantiene en el área de preparación (staging area). Aquí tienes una explicación detallada de cómo funciona:
+
+git reset --mixed <commit>: Este comando mueve la rama actual (por ejemplo, main, master, etc.) al commit especificado, pero deshace los cambios en el área de preparación, dejando los cambios en tu directorio de trabajo intactos. Al igual que con git reset --soft, la sintaxis <commit> puede ser un hash de commit, una referencia a una rama (como main, master, etc.) o un apuntador relativo como HEAD~2 para retroceder dos commits atrás desde HEAD.
+
+Efecto en los commits: Al utilizar git reset --mixed, los commits que deshaces no se eliminan por completo de tu historial de Git, sino que se mueven a un estado anterior en tu rama. Sin embargo, a diferencia de git reset --soft, los cambios en los commits deshechos no se mantienen en el área de preparación y deben agregarse nuevamente con git add antes de hacer un nuevo commit.
+
+Uso común: git reset --mixed es útil cuando deseas deshacer uno o más commits pero mantener los cambios en tu directorio de trabajo para revisarlos y realizar ajustes antes de agregarlos nuevamente al área de preparación y hacer un nuevo commit.
+
+Pasos típicos después de un git reset --mixed:
+
+Después de ejecutar git reset --mixed, los cambios de los commits deshechos están en tu directorio de trabajo pero no en el área de preparación. Puedes revisar los cambios con git status y agregar los archivos modificados con git add si deseas incluirlos en el próximo commit.
+Luego, puedes hacer un nuevo commit con los cambios ajustados utilizando git commit.
+En resumen, git reset --mixed es útil para deshacer commits en Git manteniendo los cambios en tu directorio de trabajo pero eliminando los cambios del área de preparación, lo que te permite revisar y ajustar los cambios antes de hacer un nuevo commit en tu historial de Git.
+
+             -->
+            <p>Borra el HEAD y staging</p>
+            <h4>Git reset --hard</h4>
+            <p>Borra HEAD, Staging, working directory</p>
+            <h4>Git reset id-commit</h4>
+            <p>Deshace todos los cambios despues del commit indicado preservando los cambios localmente</p>
+            <h4>Git reset --hard id-commit</h4>
+            <p>Desecha todo el historial y regresa al commmit especificado</p>
+        </article>
+    </div>
     <footer>
         Derechos reservados a no se que cosa. Para usar el <b>~</b> se debe usar alt+126.
     </footer>
